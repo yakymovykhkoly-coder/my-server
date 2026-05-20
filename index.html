@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Мій сайт</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 100px;">
+
+    <h1>🚀 Мій перший сайт</h1>
+
+    <button onclick="sendRequest()">Натисни мене</button>
+
+    <p id="result"></p>
+
+    <script>
+        function sendRequest() {
+            fetch("http://127.0.0.1:5000/api")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerText = data.message;
+                });
+        }
+    </script>
+
+</body>
+</html>
